@@ -4,12 +4,9 @@ const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
 
-const screenWidth = screen.width;
+const screenWidth = (screen.width - 300);
 
-const screenHeight = screen.height;
-
-console.log(screen.width);
-console.log(screen.height);
+const screenHeight = (screen.height- 300);
 
 function clearPad(parent){
 
@@ -28,6 +25,11 @@ function userPrompt(){
     let userInput = prompt("How large do you want your grid to be? eg. 100 = 100x100 grid, 50 = 50x50 grid: ")
 
     let number = parseInt(userInput);
+
+    if(number > 100){
+        alert("Sorry. Max number is 100!")
+        userPrompt();
+    }
 
     return number;
 }
