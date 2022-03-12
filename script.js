@@ -2,13 +2,32 @@ let attempts = 0;
 
 const container = document.querySelector('.container');
 
+const clearButton = document.querySelector('.clear');
 
+clearButton.addEventListener('click', (container) => {
 
-function createPad(){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
 
-    for(let i = 0; i < 16; i++){
+    createPad(userPrompt());
+})
+
+function userPrompt(){
+    let userInput = prompt("How large do you want your grid to be? eg. 100 = 100x100 grid, 50 = 50x50 grid: ")
+
+    let number = parseInt(userInput);
+
+    return number;
+}
+
+function createPad(gridSize){
+
+    for(let i = 0; i < gridSize; i++){
 
         const div = document.createElement('div');
+
+        let userHasHovered = false;
 
         div.style.height ="100px";
 
@@ -19,9 +38,20 @@ function createPad(){
         div.style.border = "1px solid black"
 
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = "white";
+            
+
+            if(userHasHovered != true){
+
+                div.style.backgroundColor = "white"
+                userHasHovered = true;
+
+            }
+
+            else{
+                div.style.filter = "brightness(90%)";
+            }
+
         })
-        
 
         if(i != 0){
 
@@ -29,7 +59,7 @@ function createPad(){
             container.appendChild(div);
         }
 
-    for(let j = 0; j < 16; j++){
+    for(let j = 0; j < gridSize ; j++){
 
         const div = document.createElement('div');
 
@@ -55,4 +85,4 @@ function createPad(){
 
 }
 
-createPad();
+createPad(16);
