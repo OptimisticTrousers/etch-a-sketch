@@ -33,7 +33,7 @@ function createPad(gridSize){
 
         let userHasHovered = false;
 
-        div.style.height ="100px";
+        div.style.height = `${screen.width/i}`;
 
         div.style.width = "100px";
 
