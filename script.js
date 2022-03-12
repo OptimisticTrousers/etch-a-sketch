@@ -4,6 +4,13 @@ const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
 
+const screenWidth = screen.width;
+
+const screenHeight = screen.height;
+
+console.log(screen.width);
+console.log(screen.height);
+
 function clearPad(parent){
 
 clearButton.addEventListener('click', () => {
@@ -33,9 +40,9 @@ function createPad(gridSize){
 
         let userHasHovered = false;
 
-        div.style.height = `${screen.width/i}`;
+        div.style.height = `${screenHeight/gridSize}px`;
 
-        div.style.width = "100px";
+        div.style.width = `${screenWidth/gridSize}px`;
 
         div.style.backgroundColor = "yellow";
 
@@ -67,9 +74,9 @@ function createPad(gridSize){
 
         const div = document.createElement('div');
 
-        div.style.height ="100px";
+        div.style.height =`${screenHeight/gridSize}px`;
 
-        div.style.width = "100px";
+        div.style.width = `${screenWidth/gridSize}px`;
 
         div.style.backgroundColor = "yellow";
 
