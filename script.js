@@ -27,8 +27,9 @@ function userPrompt(){
     let number = parseInt(userInput);
 
     if(number > 100){
-        alert("Sorry. Max number is 100!")
-        userPrompt();
+        alert("Sorry. Max number is 100!");
+
+        return userPrompt();
     }
 
     return number;
