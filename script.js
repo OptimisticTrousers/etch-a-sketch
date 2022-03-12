@@ -4,7 +4,9 @@ const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
 
-clearButton.addEventListener('click', (container) => {
+function clearPad(parent){
+
+clearButton.addEventListener('click', () => {
 
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
@@ -12,6 +14,8 @@ clearButton.addEventListener('click', (container) => {
 
     createPad(userPrompt());
 })
+
+}
 
 function userPrompt(){
     let userInput = prompt("How large do you want your grid to be? eg. 100 = 100x100 grid, 50 = 50x50 grid: ")
@@ -86,3 +90,5 @@ function createPad(gridSize){
 }
 
 createPad(16);
+
+clearPad(container);
