@@ -4,6 +4,8 @@ const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
 
+const eraseButton = document.querySelector('.erase');
+
 const screenWidth = 500;
 
 const screenHeight = 500;
