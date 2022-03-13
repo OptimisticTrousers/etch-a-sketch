@@ -1,12 +1,17 @@
 
 body{
     display: flex;
-    flex-direction: column;
     height: 100vh;
     width: 100%;
     background-color: lightgray;
     color: white;
     font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.etch-a-sketch{
+
+    display: flex;
+    flex-direction: column;
 }
 
 h1{
@@ -20,6 +25,12 @@ h2{
     text-align: center;
     color: black;
 }
+
+.controls-title{
+    color: white;
+    text-align: center;
+}
+
 .name{
     color:white;
     text-align: center;
@@ -68,6 +79,9 @@ transform:rotate(360deg);
 .controls{
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    background-color: black;
+    padding: 0 2rem;
 }
 
 .knobs{
