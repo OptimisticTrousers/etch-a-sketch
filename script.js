@@ -93,7 +93,7 @@ function createPad(gridSize){
 
         const randomBlue = (Math.random() * 256)
 
-        div.addEventListener('mouseover', () => {
+        div.addEventListener('mousedown', () => {
 
             let count = 9;
 

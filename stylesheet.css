@@ -4,13 +4,43 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100%;
+    background-color: gray;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+h1{
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+button {
+    margin: 0 auto;
+    padding: 2rem 6rem;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+button
 footer{
     text-align: center;
     margin-top: auto;
+    background-color: gray;
+    height: 100px;
+    margin-top: 1rem;
+    color: white;
 }
 
 .container{
     margin: 0 auto;
+    border: 15px red solid;
+
 }
