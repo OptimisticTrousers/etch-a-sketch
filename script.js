@@ -10,6 +10,14 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
+let isErase = false;
+
+eraseButton.addEventListener('mouseover', () => {
+
+    isErase = true;
+
+})
+
 function clearPad(parent){
 
 clearButton.addEventListener('click', () => {
@@ -51,22 +59,6 @@ function createPad(gridSize){
 
         div.style.backgroundColor = "white";
 
-        div.addEventListener('mouseover', () => {
-            
-
-            if(userHasHovered != true){
-
-                div.style.backgroundColor = "white"
-                userHasHovered = true;
-
-            }
-
-            else{
-                div.style.filter = "brightness(90%)";
-            }
-
-        })
-
         if(i != 0){
 
             div.style.cssFloat = "clear"
@@ -91,25 +83,19 @@ function createPad(gridSize){
 
         const randomBlue = (Math.random() * 256)
 
-        div.addEventListener('mousedown', () => {
+        if(isErase != true){
 
-            let count = 9;
+        div.addEventListener('mouseover', () => {
 
-            if(count == 9){
+            div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
 
-                div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-
-                count--;
-            }
-            else if(count == 0){
-                return
-            }
-            else{
-
-                div.style.filter = `brightness(${count}0%)`;
-
-            }
         })
+
+        }
+        else{
+            div.style.backgroundColor = "white";
+        }
+
 
         container.appendChild(div);
 
