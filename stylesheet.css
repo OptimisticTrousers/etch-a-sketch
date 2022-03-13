@@ -32,7 +32,7 @@ h2{
 .title{
     font-family: "Sacramento", cursive;
 }
-.clear{
+.clear, .erase{
     display: flex;
     margin: 0 auto;
     padding: 1rem 3rem;
@@ -61,7 +61,6 @@ transform:rotate(360deg);
 .controls{
     display: flex;
     justify-content: space-between;
-    box-shadow: 0.25vw 0.25vw 0.25vw;
 }
 
 .knob-1, .knob-2{
@@ -69,6 +68,7 @@ transform:rotate(360deg);
     height: 4vmin;
     border-radius: 50%;
     background: white;
+    margin: 2rem 0;
 
 }
 
@@ -90,15 +90,10 @@ footer{
     flex-direction: column;
     background-color: #f44336;
     margin: 0 auto;
-    border: 6px solid #f44336;
+    border: 50px solid #f44336;
     border-radius: 10px;
     margin-bottom: 50px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-
-.clear{
-    display: flex;
-    justify-content: center;
 }
 
 .container{
