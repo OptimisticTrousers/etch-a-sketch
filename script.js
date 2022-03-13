@@ -47,9 +47,7 @@ function createPad(gridSize){
 
         div.style.width = `${screenWidth/gridSize}px`;
 
-        div.style.backgroundColor = "yellow";
-
-        div.style.border = "1px solid black"
+        div.style.backgroundColor = "white";
 
         div.addEventListener('mouseover', () => {
             
@@ -81,9 +79,7 @@ function createPad(gridSize){
 
         div.style.width = `${screenWidth/gridSize}px`;
 
-        div.style.backgroundColor = "yellow";
-
-        div.style.border = "1px solid black"
+        div.style.backgroundColor = "white";
 
         div.style.cssFloat = "left"
 
