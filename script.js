@@ -4,9 +4,9 @@ const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
 
-const screenWidth = (screen.width - 300);
+const screenWidth = 500;
 
-const screenHeight = (screen.height- 300);
+const screenHeight = 500;
 
 function clearPad(parent){
 

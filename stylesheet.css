@@ -18,12 +18,12 @@ h1{
 
 h2{
     text-align: center;
+    color: black;
 }
 .name{
     color:white;
     text-align: center;
     background-color: #f44336;;
-    font-size: 100px;
 }
 .text{
     text-shadow: 0.15vw 0.15vw black;
@@ -33,6 +33,7 @@ h2{
     font-family: "Sacramento", cursive;
 }
 button {
+    display: flex;
     margin: 0 auto;
     padding: 2rem 6rem;
     background-color: white;
@@ -57,13 +58,13 @@ button:hover{
 transform:rotate(360deg);
 }
 
-.knobs{
+.controls{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     box-shadow: 0.25vw 0.25vw 0.25vw;
 }
 
-.knobs-1, .knobs-2{
+.knob-1, .knob-2{
     width: 4vmin;
     height: 4vmin;
     border-radius: 50%;
@@ -85,8 +86,11 @@ footer{
 }
 
 .toy{
+    display: flex;
+    flex-direction: column;
+    background-color: #f44336;
     margin: 0 auto;
-    border: 100px solid #f44336;
+    border: 6px solid #f44336;
     border-radius: 10px;
     margin-bottom: 50px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
