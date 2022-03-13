@@ -35,7 +35,7 @@ h2{
 .clear{
     display: flex;
     margin: 0 auto;
-    padding: 2rem 6rem;
+    padding: 1rem 3rem;
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -99,7 +99,6 @@ footer{
 .clear{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .container{
