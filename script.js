@@ -94,7 +94,23 @@ function createPad(gridSize){
         const randomBlue = (Math.random() * 256)
 
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+
+            let count = 9;
+
+            if(count == 9){
+
+                div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+
+                count--;
+            }
+            else if(count == 0){
+                return
+            }
+            else{
+
+                div.style.filter = `brightness(${count}0%)`;
+
+            }
         })
 
         container.appendChild(div);
