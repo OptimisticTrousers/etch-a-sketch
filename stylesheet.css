@@ -83,9 +83,9 @@ footer{
     border: 100px solid red;
     border-radius: 10px;
     margin-bottom: 50px;
-    box-shadow: 0.25vw 0.25vw 0.25vw outset, -0.25vw -0.25vw 0.25vw ;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 .container{
-    border-radius: 10px;;
+    border-radius: 10px;
 }
