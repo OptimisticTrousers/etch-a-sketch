@@ -6,7 +6,7 @@ body{
     width: 100%;
     background-color: lightgray;
     color: white;
-    font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1{
@@ -24,6 +24,7 @@ h2{
     color:white;
     text-align: center;
     background-color: #f44336;;
+    font-size: xx-large;
 }
 .text{
     text-shadow: 0.15vw 0.15vw black;
@@ -40,6 +41,12 @@ h2{
     color: black;
     border: 3px solid black;
     border-radius: 6px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 button:hover{
@@ -59,6 +66,11 @@ transform:rotate(360deg);
 }
 
 .controls{
+    display: flex;
+    flex-direction: column;
+}
+
+.knobs{
     display: flex;
     justify-content: space-between;
 }
