@@ -1,5 +1,7 @@
 let attempts = 0;
 
+let previousGridSize = 0;
+
 const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
@@ -30,11 +32,6 @@ eraseButton.addEventListener('mouseover', (e) => {
 
 })
 
-function changePad(sliderValue){
-
-    createPad(sliderValue)
-}
-
 function clearPad(parent){
 
 clearButton.addEventListener('click', () => {
@@ -63,6 +60,10 @@ function userPrompt(){
 }
 
 function createPad(gridSize){
+
+    if(gridSize == undefined){
+        gridSize = previousGridSize;
+    }
 
     for(let i = 0; i < gridSize; i++){
 
@@ -99,6 +100,8 @@ function createPad(gridSize){
         const randomGreen = (Math.random() * 256) 
 
         const randomBlue = (Math.random() * 256)
+
+        previousGridSize = gridSize;
 
         div.addEventListener('mouseover', () => {
 
