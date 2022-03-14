@@ -51,19 +51,6 @@ clearButton.addEventListener('click', () => {
 
 }
 
-function userPrompt(){
-    let userInput = prompt("How large do you want your grid to be? eg. 100 = 100x100 grid, 50 = 50x50 grid: ")
-
-    let number = parseInt(userInput);
-
-    if(number > 100){
-        alert("Sorry. Max number is 100!");
-
-        return userPrompt();
-    }
-
-    return number;
-}
 
 function createPad(gridSize, mode){
 
