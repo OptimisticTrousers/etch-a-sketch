@@ -24,12 +24,16 @@ sliderValue.addEventListener('change', (event) => {
     
 })
 
-eraseButton.addEventListener('mouseover', (e) => {
+eraseButton.addEventListener('click', (event) => {
     
-    if(e.target.style.backgroundColor != "white"){
-        e.target.style.backgroundColor = "white";
+    if(event.target.style.backgroundColor != "white"){
+        event.target.style.backgroundColor = "white";
     }
 
+})
+
+blackButton.addEventListener('click', (event) => {
+    createPad()
 })
 
 function clearPad(parent){
