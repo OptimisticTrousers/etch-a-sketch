@@ -6,11 +6,21 @@ const clearButton = document.querySelector('.clear');
 
 const eraseButton = document.querySelector('.erase');
 
+const rainbowButton = document.querySelector('.rainbow');
+
+const blackButton = document.querySelector('.black-and-white');
+
+const sliderValue = document.querySelector('output');
+
 const screenWidth = 500;
 
 const screenHeight = 500;
 
-let isErase = false;
+sliderValue.addEventListener('change', (event) => {
+
+    createPad(event.target.textContent);
+    
+})
 
 eraseButton.addEventListener('mouseover', (e) => {
     
@@ -19,6 +29,11 @@ eraseButton.addEventListener('mouseover', (e) => {
     }
 
 })
+
+function changePad(sliderValue){
+
+    createPad(sliderValue)
+}
 
 function clearPad(parent){
 
