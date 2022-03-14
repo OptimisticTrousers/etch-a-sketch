@@ -12,9 +12,11 @@ const screenHeight = 500;
 
 let isErase = false;
 
-eraseButton.addEventListener('mouseover', () => {
-
-    isErase = true;
+eraseButton.addEventListener('mouseover', (e) => {
+    
+    if(e.target.style.backgroundColor != "white"){
+        e.target.style.backgroundColor = "white";
+    }
 
 })
 
