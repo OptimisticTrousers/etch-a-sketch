@@ -14,7 +14,7 @@ const rainbowButton = document.querySelector('.rainbow');
 
 const blackButton = document.querySelector('.black-and-white');
 
-const sliderValue = document.querySelector('output');
+const sliderValue = document.querySelector('.slider');
 
 const screenWidth = 500;
 
@@ -29,8 +29,8 @@ rainbowButton.addEventListener('click', () => {
 sliderValue.addEventListener('change', (event) => {
 
     clearPad();
-    document.getElementById('.slider').value 
-    createPad(parseInt(document.getElementById('.slider').value), previousMode) ;
+    console.log(document.querySelector('output'));
+    createPad(document.querySelector('output').value, previousMode);
     
 })
 
