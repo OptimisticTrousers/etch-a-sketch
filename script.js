@@ -37,6 +37,7 @@ sliderValue.addEventListener('change', () => {
 eraseButton.addEventListener('mouseover', (event) => {
     
     if(event.target.style.backgroundColor != "white"){
+
         event.target.style.backgroundColor = "white";
     }
 
@@ -56,7 +57,7 @@ clearButton.addEventListener('click', () => {
         parent.removeChild(parent.firstChild);
     }
 
-})
+    })
 
 }
 
@@ -70,8 +71,6 @@ function createPad(gridSize, mode){
     for(let i = 0; i < gridSize; i++){
 
         const div = document.createElement('div');
-
-        let userHasHovered = false;
 
         div.style.height = `${screenHeight/gridSize}px`;
 
@@ -131,6 +130,6 @@ function createPad(gridSize, mode){
 }
 
 //default mode and size for the function
-createPad(previousGridSize, "rainbow");
+createPad(previousGridSize, "black");
 
 clearPad(container);
