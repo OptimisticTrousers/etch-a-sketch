@@ -28,7 +28,7 @@ rainbowButton.addEventListener('click', () => {
 
 sliderValue.addEventListener('change', (event) => {
 
-    clearPad();
+    clearPad(container);
     console.log(document.querySelector('output'));
     createPad(document.querySelector('output').value, previousMode);
     
@@ -43,7 +43,7 @@ eraseButton.addEventListener('click', (event) => {
 })
 
 blackButton.addEventListener('click', () => {
-    clearPad();
+    clearPad(container);
     createPad(previousGridSize, 'black');
 })
 
