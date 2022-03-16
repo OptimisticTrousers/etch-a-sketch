@@ -58,7 +58,7 @@
     <button class="black-and-white">Black Mode</button>
       </div>
       <!-- found this trick at https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
-      <input type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+      <input id="slider" type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
       <output>24</output>
     </div>
   </body>

@@ -28,7 +28,9 @@ rainbowButton.addEventListener('click', () => {
 
 sliderValue.addEventListener('change', (event) => {
 
-    createPad(parseInt(event.target.textContent), previousMode) 
+    clearPad();
+    document.getElementById('.slider').value 
+    createPad(parseInt(document.getElementById('.slider').value), previousMode) ;
     
 })
 
@@ -53,7 +55,6 @@ clearButton.addEventListener('click', () => {
         parent.removeChild(parent.firstChild);
     }
 
-    createPad(userPrompt());
 })
 
 }
