@@ -26,7 +26,7 @@ rainbowButton.addEventListener('click', () => {
     createPad(previousGridSize, 'rainbow');
 })
 
-sliderValue.addEventListener('change', (event) => {
+sliderValue.addEventListener('change', () => {
 
     clearPad(container);
     console.log(document.querySelector('output'));
@@ -34,7 +34,7 @@ sliderValue.addEventListener('change', (event) => {
     
 })
 
-eraseButton.addEventListener('click', (event) => {
+eraseButton.addEventListener('mouseover', (event) => {
     
     if(event.target.style.backgroundColor != "white"){
         event.target.style.backgroundColor = "white";
@@ -43,6 +43,7 @@ eraseButton.addEventListener('click', (event) => {
 })
 
 blackButton.addEventListener('click', () => {
+
     clearPad(container);
     createPad(previousGridSize, 'black');
 })
