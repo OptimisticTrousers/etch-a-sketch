@@ -22,7 +22,7 @@ const screenHeight = 500;
 
 rainbowButton.addEventListener('click', () => {
 
-    clearPad();
+    clearPad(container);
     createPad(previousGridSize, 'rainbow');
 })
 
