@@ -1,8 +1,8 @@
 let attempts = 0;
 
-let previousGridSize = 0;
+let previousGridSize = 16;
 
-let previousMode = "";
+let previousMode = "black";
 
 const container = document.querySelector('.container');
 
@@ -20,6 +20,12 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
+rainbowButton.addEventListener('click', () => {
+
+    clearPad();
+    createPad(previousGridSize, 'rainbow');
+})
+
 sliderValue.addEventListener('change', (event) => {
 
     createPad(parseInt(event.target.textContent), previousMode) 
@@ -34,8 +40,9 @@ eraseButton.addEventListener('click', (event) => {
 
 })
 
-blackButton.addEventListener('click', (event) => {
-    createPad(currentGridSize, 'black');
+blackButton.addEventListener('click', () => {
+    clearPad();
+    createPad(previousGridSize, 'black');
 })
 
 function clearPad(parent){
@@ -101,6 +108,7 @@ function createPad(gridSize, mode){
         div.addEventListener('mouseover', () => {
 
             if(mode == 'black'){
+
                 div.style.backgroundColor = "black";
             }
             else if (mode == 'rainbow'){
@@ -121,6 +129,6 @@ function createPad(gridSize, mode){
 }
 
 //default mode and size for the function
-createPad(16, 'black');
+createPad(previousGridSize, "rainbow");
 
 clearPad(container);
