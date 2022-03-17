@@ -1,8 +1,7 @@
 let attempts = 0;
 
 let previousGridSize = 16;
-
-let previousMode = "erase";
+let previousMode = "black";
 
 const container = document.querySelector('.container');
 
@@ -27,17 +26,17 @@ sliderValue.addEventListener('change', (event) => {
 })
 
 
-let erase = false;
 
-eraseButton.onclick = () => erase = true;
+eraseButton.onclick = () => previousMode = 'erase';
 
 blackButton.addEventListener('click', () => {
 
-    createPad(previousGridSize, 'black');
+    previousMode = 'black';
 })
 
 rainbowButton.addEventListener('click', () => {
-    createPad(previousGridSize, 'rainbow');
+
+    previousMode = 'rainbow'
 })
 
 function clearPad(parent){
@@ -46,14 +45,13 @@ clearButton.addEventListener('click', () => {
 
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
-    }
+        }
 
-})
+    })
 
 }
 
-
-function createPad(gridSize, mode){
+function createPad(gridSize){
 
     for(let i = 0; i < gridSize; i++){
 
@@ -91,27 +89,17 @@ function createPad(gridSize, mode){
 
         div.addEventListener('mousedown', (event) => {
 
-            console.log(previousMode)
-
-
-            if(erase == true){
+            if(previousMode == 'erase'){
                 event.target.style.backgroundColor = "white"
             }
-            else if(mode === 'rainbow'){
-                div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+            else if(previousMode === 'rainbow'){
+                event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
             }
-            else if(mode === 'black'){
+            else if(previousMode === 'black'){
 
-                div.style.backgroundColor = "black";
+                event.target.style.backgroundColor = "black";
             }
         })
-        //div.addEventListener('mouseup', draw)
-
-        //function draw(event){
-
-            //event.target.style.backgroundColor = '';
-        //}
-
 
         container.appendChild(div);
 
@@ -122,5 +110,5 @@ function createPad(gridSize, mode){
 }
 
 //default mode and size for the function
-createPad(16, 'black');
+createPad(previousGridSize);
 clearPad(container);
