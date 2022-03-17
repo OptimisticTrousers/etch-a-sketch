@@ -127,8 +127,4 @@ function createPad(gridSize, mode){
 
 //default mode and size for the function
 createPad(16, 'black');
-<<<<<<< HEAD
-
-=======
->>>>>>> 002ca9c0bb7a381f4c8af4c852dfe558113f2652
 clearPad(container);
