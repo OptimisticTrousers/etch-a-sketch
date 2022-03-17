@@ -26,16 +26,13 @@ sliderValue.addEventListener('change', (event) => {
     
 })
 
-eraseButton.addEventListener('click', (event) => {
-    
-    if(event.target.style.backgroundColor != "white"){
-        event.target.style.backgroundColor = "white";
-    }
 
-   previousMode = "erase" 
-})
+let erase = false;
+
+eraseButton.onclick = () => erase = true;
 
 blackButton.addEventListener('click', () => {
+
     createPad(previousGridSize, 'black');
 })
 
