@@ -89,12 +89,15 @@ function createPad(gridSize, mode){
 
         const randomBlue = (Math.random() * 256)
 
-        div.addEventListener('mousedown', () => {
+        div.addEventListener('mousedown', (event) => {
 
             console.log(previousMode)
 
 
-            if(mode === 'rainbow'){
+            if(erase == true){
+                event.target.style.backgroundColor = "white"
+            }
+            else if(mode === 'rainbow'){
                 div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
             }
             else if(mode === 'black'){
