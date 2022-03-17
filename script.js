@@ -2,7 +2,7 @@ let attempts = 0;
 
 let previousGridSize = 16;
 
-let previousMode = "black";
+let previousMode = "erase";
 
 const container = document.querySelector('.container');
 
@@ -32,6 +32,7 @@ eraseButton.addEventListener('click', (event) => {
         event.target.style.backgroundColor = "white";
     }
 
+   previousMode = "erase" 
 })
 
 blackButton.addEventListener('click', () => {
@@ -91,22 +92,29 @@ function createPad(gridSize, mode){
 
         const randomBlue = (Math.random() * 256)
 
-        previousGridSize = gridSize;
+        div.addEventListener('mousedown', (event) => {
 
-        previousMode = mode;
+            console.log(previousMode)
 
-        div.addEventListener('mouseover', () => {
+            if (mode === 'rainbow'){
 
             if(mode == 'black'){
                 div.style.backgroundColor = "black";
             }
-            else if (mode == 'rainbow'){
+            else if(mode === 'black'){
 
-            div.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+            event.target.style.backgroundColor = "black";
             }
-
-
+            else if(previousMode === 'erase'){
+                event.target.style.backgroundColor = "white";
+            }
         })
+        //div.addEventListener('mouseup', draw)
+
+        //function draw(event){
+
+            //event.target.style.backgroundColor = '';
+        //}
 
 
         container.appendChild(div);
@@ -119,5 +127,8 @@ function createPad(gridSize, mode){
 
 //default mode and size for the function
 createPad(16, 'black');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 002ca9c0bb7a381f4c8af4c852dfe558113f2652
 clearPad(container);
