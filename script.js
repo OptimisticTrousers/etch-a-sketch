@@ -19,11 +19,16 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
-sliderValue.addEventListener('change', (event) => {
 
-    createPad(event.target.textContent, previousMode) 
+
+//sliderValue.addEventListener('change', (event) => {
+
+    //let currentSliderValue = document.querySelector('.slider');
+
+    //createPad(event.target.textContent);
+    //console.log(event.target.textContent);
     
-})
+//})
 
 
 
