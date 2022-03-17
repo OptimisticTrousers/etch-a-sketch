@@ -27,7 +27,7 @@ sliderValue.addEventListener('change', (event) => {
 
 
 
-eraseButton.onclick = () => previousMode = 'erase';
+eraseButton.onclick = () => previousMode = 'erase'; 
 
 blackButton.addEventListener('click', () => {
 
@@ -39,17 +39,16 @@ rainbowButton.addEventListener('click', () => {
     previousMode = 'rainbow'
 })
 
-function clearPad(parent){
-
 clearButton.addEventListener('click', () => {
 
-    while(parent.firstChild){
-        parent.removeChild(parent.firstChild);
-        }
+    while(container.firstChild){
+       container.removeChild(container.firstChild);
+    }
 
+    createPad(previousGridSize);
     })
 
-}
+
 
 function createPad(gridSize){
 
@@ -89,7 +88,7 @@ function createPad(gridSize){
 
         div.addEventListener('mousedown', (event) => {
 
-            if(previousMode == 'erase'){
+            if(previousMode === 'erase'){
                 event.target.style.backgroundColor = "white"
             }
             else if(previousMode === 'rainbow'){
@@ -111,4 +110,3 @@ function createPad(gridSize){
 
 //default mode and size for the function
 createPad(previousGridSize);
-clearPad(container);
