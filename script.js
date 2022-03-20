@@ -19,11 +19,6 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
-let mouseDown = false;
-
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
-
 slider.addEventListener('mouseup', () => {
 
 
@@ -65,18 +60,23 @@ clearButton.addEventListener('click', () => {
 
 function changeDivColor(event){
 
-    if(event.type == 'mouseover' && !mouseDown) return
+    //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
-    if(previousMode === 'erase'){
-        event.target.style.backgroundColor = "white"
-    }
-    else if(previousMode === 'rainbow'){
-        event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-    }
-    else if(previousMode === 'black'){
+    if(event.buttons == 1 || event.buttons == 3){
 
-        event.target.style.backgroundColor = "black";
+        if(previousMode === 'erase'){
+            event.target.style.backgroundColor = "white"
+        }
+        else if(previousMode === 'rainbow'){
+            event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+        }
+        else if(previousMode === 'black'){
+
+            event.target.style.backgroundColor = "black";
+        }
+
     }
+
 }
 
 
@@ -115,6 +115,7 @@ function createPad(gridSize){
         const randomGreen = (Math.random() * 256) 
 
         const randomBlue = (Math.random() * 256)
+
 
         div.addEventListener('mouseover', (event) => {
 
