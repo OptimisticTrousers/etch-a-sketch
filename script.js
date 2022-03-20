@@ -19,6 +19,11 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
+let mouseDown = false;
+
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 slider.addEventListener('mouseup', () => {
 
 
@@ -58,6 +63,21 @@ clearButton.addEventListener('click', () => {
 });
 
 
+function changeDivColor(event){
+
+    if(event.type == 'mouseover' && !mouseDown) return
+
+    if(previousMode === 'erase'){
+        event.target.style.backgroundColor = "white"
+    }
+    else if(previousMode === 'rainbow'){
+        event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+    }
+    else if(previousMode === 'black'){
+
+        event.target.style.backgroundColor = "black";
+    }
+}
 
 
 function createPad(gridSize){
@@ -96,18 +116,13 @@ function createPad(gridSize){
 
         const randomBlue = (Math.random() * 256)
 
+        div.addEventListener('mouseover', (event) => {
+
+            changeDivColor(event);
+        })
         div.addEventListener('mousedown', (event) => {
 
-            if(previousMode === 'erase'){
-                event.target.style.backgroundColor = "white"
-            }
-            else if(previousMode === 'rainbow'){
-                event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-            }
-            else if(previousMode === 'black'){
-
-                event.target.style.backgroundColor = "black";
-            }
+            changeDivColor(event);
         })
 
         container.appendChild(div);
