@@ -93,13 +93,21 @@ function changeDivColor(event){
 
     const randomBlue = (Math.random() * 256)
 
+    let opacity = Number(event.target.style.opacity);
     //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
 
     if(event.buttons == 1 || event.buttons == 3){
 
+        //for shading and lighting https://stackoverflow.com/questions/58511950/javascript-etch-a-sketch-shading-pen-stops-increasing-opacity-after-another-pen
+
         if(previousMode === 'shading'){
-            event.target.style.filter = "brightness(0.90)";
+
+            event.target.style.opacity = opacity <= 0 ? "0" : opacity - 0.1 + "";
+        }
+        else if(previousMode === 'lighting'){
+
+            event.tartget.style.opacity = opacity
         }
         else if(previousMode === 'picker'){
 
