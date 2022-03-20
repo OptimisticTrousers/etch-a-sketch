@@ -137,6 +137,8 @@ function createPad(gridSize){
 
         div.style.cssFloat = "left"
 
+        previousGridSize = gridSize;
+
         div.addEventListener('mouseover', (event) => {
 
             changeDivColor(event);
