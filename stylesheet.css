@@ -115,6 +115,9 @@ footer{
     height: 100px;
     color: white;
 }
+.current-color{
+    background-color: red;
+}
 
 .toy{
     display: flex;

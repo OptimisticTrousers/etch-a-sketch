@@ -17,6 +17,8 @@ const colorPickerButton = document.querySelector('.color-picker');
 
 const slider = document.getElementById('slider');
 
+const currentColorDiv = document.querySelector('.current-color')
+
 const screenWidth = 500;
 
 const screenHeight = 500;
@@ -86,6 +88,7 @@ function changeDivColor(event){
         if(previousMode === 'picker'){
 
             currentColor = event.target.style.backgroundColor;
+            currentColorDiv.style.backgroundColor = currentColor;
             console.log(currentColor);
         }
         else if(previousMode === 'erase'){
