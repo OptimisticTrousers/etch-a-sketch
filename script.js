@@ -13,12 +13,21 @@ const rainbowButton = document.querySelector('.rainbow');
 
 const blackButton = document.querySelector('.black-and-white');
 
-const sliderValue = document.querySelector('output');
+const slider = document.getElementById('.slider');
+
+sliderValue = document.querySelector('output');
+
 
 const screenWidth = 500;
 
 const screenHeight = 500;
 
+slider.addEventListener('mouseup, ', function () {
+
+    let sliderOutput = this.value;
+
+    createPad(sliderOutput);
+})
 
 
 //sliderValue.addEventListener('change', (event) => {
