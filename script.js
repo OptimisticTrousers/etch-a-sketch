@@ -60,6 +60,13 @@ clearButton.addEventListener('click', () => {
 
 function changeDivColor(event){
 
+
+    const randomRed = (Math.random() * 256)
+
+    const randomGreen = (Math.random() * 256) 
+
+    const randomBlue = (Math.random() * 256)
+
     //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
     if(event.buttons == 1 || event.buttons == 3){
@@ -109,13 +116,6 @@ function createPad(gridSize){
         div.style.backgroundColor = "white";
 
         div.style.cssFloat = "left"
-
-        const randomRed = (Math.random() * 256)
-
-        const randomGreen = (Math.random() * 256) 
-
-        const randomBlue = (Math.random() * 256)
-
 
         div.addEventListener('mouseover', (event) => {
 
