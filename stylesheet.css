@@ -44,7 +44,7 @@ h2{
 .title{
     font-family: "Sacramento", cursive;
 }
-.clear, .erase, .rainbow, .black-and-white, .color-picker, .background{
+.clear, .erase, .rainbow, .black-and-white, .color-grabber, .background, .shading{
     display: flex;
     margin: 0 auto;
     padding: 1rem 3rem;

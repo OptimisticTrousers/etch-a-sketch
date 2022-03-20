@@ -13,7 +13,7 @@ const rainbowButton = document.querySelector('.rainbow');
 
 const blackButton = document.querySelector('.black-and-white');
 
-const colorPickerButton = document.querySelector('.color-picker');
+const colorGrabber = document.querySelector('.color-grabber');
 
 const slider = document.getElementById('slider');
 
@@ -31,7 +31,7 @@ backgroundColorButton.addEventListener('click', () =>{
 
 })
 
-colorPickerButton.addEventListener('click', () => {
+colorGrabber.addEventListener('click', () => {
 
     previousMode = 'picker';
 
