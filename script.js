@@ -13,32 +13,20 @@ const rainbowButton = document.querySelector('.rainbow');
 
 const blackButton = document.querySelector('.black-and-white');
 
-const slider = document.getElementById('.slider');
-
-sliderValue = document.querySelector('output');
-
+const slider = document.getElementById('slider');
 
 const screenWidth = 500;
 
 const screenHeight = 500;
 
-slider.addEventListener('mouseup, ', function () {
+slider.addEventListener('mouseup', () => {
 
-    let sliderOutput = this.value;
 
+    let sliderOutput = document.querySelector('output').value;
+
+    clearPad();
     createPad(sliderOutput);
 })
-
-
-//sliderValue.addEventListener('change', (event) => {
-
-    //let currentSliderValue = document.querySelector('.slider');
-
-    //createPad(event.target.textContent);
-    //console.log(event.target.textContent);
-    
-//})
-
 
 
 eraseButton.onclick = () => previousMode = 'erase'; 
@@ -53,14 +41,22 @@ rainbowButton.addEventListener('click', () => {
     previousMode = 'rainbow'
 })
 
-clearButton.addEventListener('click', () => {
+function clearPad(){
 
     while(container.firstChild){
        container.removeChild(container.firstChild);
     }
 
+}
+
+
+
+clearButton.addEventListener('click', () => {
+
+    clearPad();
     createPad(previousGridSize);
-    })
+});
+
 
 
 
