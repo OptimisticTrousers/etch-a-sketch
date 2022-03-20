@@ -13,11 +13,21 @@ const rainbowButton = document.querySelector('.rainbow');
 
 const blackButton = document.querySelector('.black-and-white');
 
+const colorPickerButton = document.querySelector('.color-picker');
+
 const slider = document.getElementById('slider');
 
 const screenWidth = 500;
 
 const screenHeight = 500;
+
+let currentColor = ""
+
+colorPickerButton.addEventListener('click', () => {
+
+    previousMode = 'picker';
+
+})
 
 slider.addEventListener('mouseup', () => {
 
@@ -40,6 +50,7 @@ rainbowButton.addEventListener('click', () => {
 
     previousMode = 'rainbow'
 })
+
 
 function clearPad(){
 
@@ -69,9 +80,15 @@ function changeDivColor(event){
 
     //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
+
     if(event.buttons == 1 || event.buttons == 3){
 
-        if(previousMode === 'erase'){
+        if(previousMode === 'picker'){
+
+            currentColor = event.target.style.backgroundColor;
+            console.log(currentColor);
+        }
+        else if(previousMode === 'erase'){
             event.target.style.backgroundColor = "white"
         }
         else if(previousMode === 'rainbow'){
