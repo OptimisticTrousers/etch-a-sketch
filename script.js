@@ -21,11 +21,18 @@ const currentColorDiv = document.querySelector('.current-color');
 
 const backgroundColorButton = document.querySelector('.background');
 
+const shadingButton = document.querySelector('.shading');
+
 const screenWidth = 500;
 
 const screenHeight = 500;
 
 let currentColor = ""
+
+shadingButton.addEventListener('click', () => {
+
+    previousMode = "shading"
+})
 
 backgroundColorButton.addEventListener('click', () =>{
 
@@ -91,7 +98,10 @@ function changeDivColor(event){
 
     if(event.buttons == 1 || event.buttons == 3){
 
-        if(previousMode === 'picker'){
+        if(previousMode === 'shading'){
+            event.target.style.filter = "brightness(0.90)";
+        }
+        else if(previousMode === 'picker'){
 
             currentColor = event.target.style.backgroundColor;
             currentColorDiv.style.backgroundColor = currentColor;
