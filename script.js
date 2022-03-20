@@ -17,13 +17,19 @@ const colorPickerButton = document.querySelector('.color-picker');
 
 const slider = document.getElementById('slider');
 
-const currentColorDiv = document.querySelector('.current-color')
+const currentColorDiv = document.querySelector('.current-color');
+
+const backgroundColorButton = document.querySelector('.background');
 
 const screenWidth = 500;
 
 const screenHeight = 500;
 
 let currentColor = ""
+
+backgroundColorButton.addEventListener('click', () =>{
+
+})
 
 colorPickerButton.addEventListener('click', () => {
 
@@ -112,12 +118,6 @@ function createPad(gridSize){
     for(let i = 0; i < gridSize; i++){
 
         const div = document.createElement('div');
-
-        div.style.height = `${screenHeight/gridSize}px`;
-
-        div.style.width = `${screenWidth/gridSize}px`;
-
-        div.style.backgroundColor = "white";
 
         if(i != 0){
 
