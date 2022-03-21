@@ -41,9 +41,20 @@ shadingButton.addEventListener('click', () => {
     previousMode = "shading";
 })
 
-backgroundColorButton.addEventListener('click', () =>{
+//backgroundColorButton.addEventListener('click', () => {
 
-})
+    //changeBackgroundColor()
+//})
+
+//function changeBackgroundColor(){
+
+    //const gridChildren = document.querySelectorAll('.container');
+
+    //gridChildren.forEach(div => {
+        //div.style.backgroundColor = ""
+    //})
+//}
+
 
 colorGrabber.addEventListener('click', () => {
 
