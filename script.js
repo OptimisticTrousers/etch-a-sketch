@@ -15,11 +15,13 @@ const blackButton = document.querySelector('.black-and-white');
 
 const colorGrabber = document.querySelector('.color-grabber');
 
-const colorPicker = document.querySelector('.color-picker');
+const colorPickerButton = document.querySelector('.color-picker');
 
 const slider = document.getElementById('slider');
 
 const currentColorDiv = document.querySelector('.current-color');
+
+const userColorPicker = document.getElementById('picker')
 
 const backgroundColorButton = document.querySelector('.background');
 
@@ -36,6 +38,16 @@ const screenHeight = 500;
 //instead of relying on the import of manufactured good
 
 let currentColor = ""
+
+let userColor = "";
+
+userColorPicker.addEventListener('change', getUserColor, false);
+userColorPicker.addEventListener('input', getUserColor, false);
+
+function getUserColor(event){
+
+    userColor = event.target.value;
+}
 
 lightingButton.addEventListener('click', () => {
 
@@ -55,8 +67,6 @@ backgroundColorButton.addEventListener('click', () => {
 function changeBackgroundColor(){
 
     const gridChildren = document.querySelectorAll('.container');
-
-    console.log(gridChildren);
 
     gridChildren.forEach(function(div) {
         div.style.backgroundColor = "red";
