@@ -31,7 +31,6 @@ const screenWidth = 500;
 
 const screenHeight = 500;
 
-
 //using one's own industry to produce manufactured goods 
 //using one's own industries to produce manufactured goods
 //instead of relying on the import of manufactured good
@@ -48,19 +47,21 @@ shadingButton.addEventListener('click', () => {
     previousMode = "shading";
 })
 
-//backgroundColorButton.addEventListener('click', () => {
+backgroundColorButton.addEventListener('click', () => {
 
-    //changeBackgroundColor()
-//})
+    changeBackgroundColor()
+})
 
-//function changeBackgroundColor(){
+function changeBackgroundColor(){
 
-    //const gridChildren = document.querySelectorAll('.container');
+    const gridChildren = document.querySelectorAll('.container');
 
-    //gridChildren.forEach(div => {
-        //div.style.backgroundColor = ""
-    //})
-//}
+    console.log(gridChildren);
+
+    gridChildren.forEach(function(div) {
+        div.style.backgroundColor = "red";
+    })
+}
 
 
 colorGrabber.addEventListener('click', () => {
