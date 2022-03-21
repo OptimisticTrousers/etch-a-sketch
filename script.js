@@ -25,6 +25,8 @@ const userColorPicker = document.getElementById('picker')
 
 const backgroundColorButton = document.querySelector('.background');
 
+const backgroundColorPicker = document.getElementById('background-picker')
+
 const lightingButton = document.querySelector('.lighting')
 
 const shadingButton = document.querySelector('.shading');
@@ -39,7 +41,24 @@ const screenHeight = 500;
 
 let currentColor = ""
 
+let backgroundColor = ""
+
 let userColor = "";
+
+function getBackgroundColor(event){
+
+    backgroundColor = event.target.value;
+}
+
+backgroundColorPicker.addEventListener('change', (event) => {
+
+    getBackgroundColor(event)
+})
+
+backgroundColorPicker.addEventListener('input', (event) => {
+
+    getBackgroundColor(event)
+})
 
 userColorPicker.addEventListener('change', (event) => {
 
@@ -70,19 +89,6 @@ shadingButton.addEventListener('click', () => {
     previousMode = "shading";
 })
 
-backgroundColorButton.addEventListener('click', () => {
-
-    changeBackgroundColor()
-})
-
-function changeBackgroundColor(){
-
-    const gridChildren = document.querySelectorAll('.container');
-
-    gridChildren.forEach(function(div) {
-        div.style.backgroundColor = "red";
-    })
-}
 
 
 colorGrabber.addEventListener('click', () => {
