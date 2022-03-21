@@ -31,6 +31,11 @@ const screenHeight = 500;
 
 let currentColor = ""
 
+lightingButton.addEventListener('click', () => {
+
+    previousMode = "lighting";
+})
+
 shadingButton.addEventListener('click', () => {
 
     previousMode = "shading";
