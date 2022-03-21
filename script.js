@@ -48,6 +48,8 @@ let userColor = "";
 function getBackgroundColor(event){
 
     backgroundColor = event.target.value;
+
+    container.style.backgroundColor = `${backgroundColor}`;
 }
 
 backgroundColorPicker.addEventListener('change', (event) => {
