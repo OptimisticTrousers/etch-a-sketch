@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <title>Etch-a-Sketch</title>
@@ -9,38 +9,17 @@
   </head>
   <body>
     <main>
-    <div class="etch-a-sketch">
+      <div class="etch-a-sketch">
     
+      <h1 class="title text">Etch-A-Sketch</h1>
 
-    <h1 class="title text">Etch-A-Sketch</h1>
-    <!--<h2>Note: default size is 16x16 for the grid(Max is 100x100)</h2>-->
-    <div class="toy">
+        <div class="toy">
 
-      <!-- <div class="name">
-        <span class="text">
-          Magic
-        </span>
-        <span class="title text">
-        Etch-A-Sketch
-        </span>
-        <span class="text">
-         Sketch 
-        </span>
-      </div>-->
-    <div class="container">
-    </div> 
+          <div class="container">
+          </div> 
 
-
-    <!--<div class="knobs">
-
-    <div class="knob-1" >
-    </div>
-    <div class="knob-2" >
-    </div>-->
-
-    </div>
-    </div>
-    </div>
+        </div>
+      </div>
     <div class="controls">
       <h2 class="controls-title">Controls</h2>
 
@@ -48,25 +27,28 @@
           <h3>Color:</h3>
           <input id="picker" type="color">
         </div>
-        <div class="background-picker-container">
 
+        <div class="background-picker-container">
           <h3>Background Color:</h3>
           <input id="background-picker" type="color">
         </div>
+
       <div class="buttons">
-    <button class="background">Change Background Color</button>
-    <button class="color-grabber">Color Grabber</button>
-    <button class="clear">Clear</button>
-    <button class="erase">Erase</button>
-    <button class="rainbow">Rainbow Mode</button>
-    <button class="black-and-white">Black Mode</button>
-    <button class="shading">Toggle Shading</button>
-    <button class="lighting">Toggle Lighting</button>
+        <button class="background">Change Background Color</button>
+        <button class="color-grabber">Color Grabber</button>
+        <button class="clear">Clear</button>
+        <button class="erase">Erase</button>
+        <button class="rainbow">Rainbow Mode</button>
+        <button class="black-and-white">Black Mode</button>
+        <button class="shading">Toggle Shading</button>
+        <button class="lighting">Toggle Lighting</button>
       </div>
+
       <!-- found this trick at https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
       <h4>Adjust the size:</h4>
       <input id="slider" type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
       <output>24</output>
+
     </div>
     </main>
      <footer>
