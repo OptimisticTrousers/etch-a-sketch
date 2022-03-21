@@ -21,6 +21,8 @@ const currentColorDiv = document.querySelector('.current-color');
 
 const backgroundColorButton = document.querySelector('.background');
 
+const lightingButton = document.querySelector('.lighting')
+
 const shadingButton = document.querySelector('.shading');
 
 const screenWidth = 500;
