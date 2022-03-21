@@ -15,6 +15,8 @@ const blackButton = document.querySelector('.black-and-white');
 
 const colorGrabber = document.querySelector('.color-grabber');
 
+const colorPicker = document.querySelector('.color-picker');
+
 const slider = document.getElementById('slider');
 
 const currentColorDiv = document.querySelector('.current-color');
