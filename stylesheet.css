@@ -82,7 +82,7 @@ h2{
     margin-top: 20px;
 }
 
-button:hover{
+button:hover, button.is-active{
     color: white;
     background-color: black;
     cursor: pointer;

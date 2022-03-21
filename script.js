@@ -82,15 +82,34 @@ function getUserColor(event){
 lightingButton.addEventListener('click', () => {
 
     previousMode = "lighting";
+    clearButtonStyle();
+    lightingButton.classList.add('is-active');
 })
 
 shadingButton.addEventListener('click', () => {
 
     previousMode = "shading";
+    clearButtonStyle();
+    shadingButton.classList.add('is-active');
 })
 
+function clearButtonStyle(){
 
-colorGrabber.onclick = () => previousMode = 'grabber';
+    const buttonNodeList = document.querySelectorAll('button')
+
+    for(const button of buttonNodeList){
+
+        button.classList.remove('is-active');
+    }
+}
+
+colorGrabber.addEventListener('click', () => {
+
+    previousMode = 'grabber';
+    clearButtonStyle();
+    colorGrabber.classList.add('is-active');
+
+})
 
 slider.addEventListener('mouseup', () => {
 
@@ -105,17 +124,23 @@ slider.addEventListener('mouseup', () => {
 eraseButton.addEventListener('click' ,() => {
 
     previousMode = 'erase';
-    eraseButton
+    clearButtonStyle();
+    eraseButton.classList.add('is-active');
+    
 }) 
 
 blackButton.addEventListener('click', () => {
 
     previousMode = 'black';
+    clearButtonStyle();
+    blackButton.classList.add('is-active');
 })
 
 rainbowButton.addEventListener('click', () => {
 
     previousMode = 'rainbow'
+    clearButtonStyle();
+    rainbowButton.classList.add('is-active');
 })
 
 
@@ -171,7 +196,6 @@ function changeDivColor(event, div){
 
     let opacity = Number(event.target.style.opacity);
 
-    let grabberToggle = false;
     //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
 
@@ -182,7 +206,6 @@ function changeDivColor(event, div){
 
 
             event.target.style.backgroundColor = `${userColorPicker.value}`;
-
         }
         else if(previousMode === 'lighting'){
 
