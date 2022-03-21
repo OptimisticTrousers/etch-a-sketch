@@ -125,6 +125,25 @@ function clearPad(){
 
 function RGBtoHex(RGBValue){
 
+    let sep = RGBValue.indexOf(",") > -1 ? "," : "";
+
+    RGBValue = RGBColor.substr(4).split(")")[0].split(sep);
+
+    let r = (+RGBValue[0]).toString(16),
+        g = (+RGBValue[1]).toString(16),
+        b = (+RGBValue[2]).toString(16);
+
+    if(r.length == 1){
+        r = "0" + r;
+    }
+    if(g.length == 1){
+        g = "0" + g;
+    }
+    if(b.length == 1){
+        b = "0" + b;
+    }
+
+    return "#" + r + g + b;
 
 }
 
@@ -167,9 +186,10 @@ function changeDivColor(event, div){
         }
         else if(previousMode === 'grabber'){
             
-            RGBColor = window.getComputedStyle(div).color;
+            RGBColor = event.target.style.backgroundColor;
             console.log(RGBColor);
             HexColor = RGBtoHex(RGBColor);
+            console.log(HexColor);
             userColorPicker.value = HexColor;
         }
         else if(previousMode === 'erase'){
@@ -221,11 +241,11 @@ function createPad(gridSize){
 
         div.addEventListener('mouseover', (event) => {
 
-            changeDivColor(event, div);
+            changeDivColor(event);
         })
         div.addEventListener('mousedown', (event) => {
 
-            changeDivColor(event, div);
+            changeDivColor(event);
         })
 
         container.appendChild(div);
