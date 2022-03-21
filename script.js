@@ -187,14 +187,12 @@ function changeDivColor(event, div){
         else if(previousMode === 'grabber'){
             
             RGBColor = event.target.style.backgroundColor;
-            console.log(RGBColor);
             HexColor = RGBtoHex(RGBColor);
-            console.log(HexColor);
             userColorPicker.value = HexColor;
         }
         else if(previousMode === 'erase'){
 
-            event.target.style.backgroundColor = "white"
+            event.target.style.backgroundColor = "rgb(255, 255, 255)"
             event.target.style.opacity = "1";
         }
         else if(previousMode === 'rainbow'){
@@ -204,7 +202,7 @@ function changeDivColor(event, div){
         }
         else if(previousMode === 'black'){
 
-            event.target.style.backgroundColor = "black";
+            event.target.style.backgroundColor = "rgb(0, 0, 0)";
             event.target.style.opacity = "1";
         }
 
@@ -233,7 +231,7 @@ function createPad(gridSize){
 
         div.style.width = `${screenWidth/gridSize}px`;
 
-        div.style.backgroundColor = "white";
+        div.style.backgroundColor = "rgb(255,255,255)";
 
         div.style.cssFloat = "left"
 
