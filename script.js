@@ -108,11 +108,11 @@ function changeDivColor(event){
 
         //for shading and lighting https://stackoverflow.com/questions/58511950/javascript-etch-a-sketch-shading-pen-stops-increasing-opacity-after-another-pen
 
-        if(previousMode === 'shading'){
+        if(previousMode === 'lighting'){
 
             event.target.style.opacity = opacity <= 0 ? "0" : opacity - 0.1 + "";
         }
-        else if(previousMode === 'lighting'){
+        else if(previousMode === 'shading'){
 
             event.target.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
         }
@@ -120,17 +120,21 @@ function changeDivColor(event){
 
             currentColor = event.target.style.backgroundColor;
             currentColorDiv.style.backgroundColor = currentColor;
-            console.log(currentColor);
         }
         else if(previousMode === 'erase'){
+
             event.target.style.backgroundColor = "white"
+            event.target.style.opacity = "1";
         }
         else if(previousMode === 'rainbow'){
+
             event.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+            event.target.style.opacity = "1";
         }
         else if(previousMode === 'black'){
 
             event.target.style.backgroundColor = "black";
+            event.target.style.opacity = "1";
         }
 
     }
