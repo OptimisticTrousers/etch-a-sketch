@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
   </head>
   <body>
-    <div draggable="false" class="etch-a-sketch">
+    <main>
+    <div class="etch-a-sketch">
     
 
     <h1 class="title text">Etch-A-Sketch</h1>
@@ -39,26 +40,18 @@
 
     </div>
     </div>
-     <footer>
-       <h6>
-          Created by Tony Isern
-       </h6>
-       <a href="https://github.com/OptimisticTrousers">
-        <img class="github-logo" src="github-logo.svg">
-       </a>
-     </footer> 
     </div>
     <div class="controls">
       <h2 class="controls-title">Controls</h2>
 
       <div class="buttons">
         <div class="picker-container">
-          <h3>Color:</h4>
+          <h3>Color:</h3>
           <input id="picker" type="color">
         </div>
         <div class="background-picker-container">
 
-          <h4>Background Color:</h4>
+          <h3>Background Color:</h3>
           <input id="background-picker" type="color">
         </div>
     <button class="background">Change Background Color</button>
@@ -75,5 +68,14 @@
       <input id="slider" type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
       <output>24</output>
     </div>
+    </main>
+     <footer>
+       <p>
+          Created by Tony Isern
+       </p>
+       <a href="https://github.com/OptimisticTrousers">
+        <img class="github-logo" src="github-logo.svg">
+       </a>
+     </footer> 
   </body>
 </html>

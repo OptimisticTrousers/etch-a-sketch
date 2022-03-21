@@ -1,19 +1,31 @@
 
 body{
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
     background-color: lightgray;
-    justify-content: space-evenly;
-    align-items: center;
     color: white;
     font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+img{
+    width: 40px;
+    height: 40px;
+}
 .etch-a-sketch{
 
     display: flex;
     flex-direction: column;
+}
+p{
+    font-size: x-large;
 }
 
 h1{
@@ -31,6 +43,7 @@ h2{
 .controls-title{
     color: white;
     text-align: center;
+    font-size:xx-large;
 }
 
 .name{
@@ -49,18 +62,20 @@ h2{
 .clear, .erase, .rainbow, .black-and-white, .color-grabber, .background, .shading, .lighting, .color-picker{
     display: flex;
     margin: 0 auto;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 3rem;
     width: 100%;
     background-color: white;
     color: black;
+    font-size: 16px;
     border: 3px solid black;
     border-radius: 6px;
 }
 
 .buttons{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    gap: 1rem;
+    gap: 8px;
     justify-content: space-evenly;
     margin-top: 20px;
 }
@@ -84,11 +99,11 @@ transform:rotate(360deg);
 .controls{
     display: flex;
     flex-direction: column;
-    background-color: black;
-    padding: 0 2rem;
+    background-color: #343434;
+    padding: 0 4em;
     padding-bottom: 1rem;
     border-radius: 10px;
-    border: 5px solid #2F2F2F;
+    border: 10px ridge #2F2F2F;
 }
 
 .knobs{
@@ -152,7 +167,8 @@ body{
 }
 .background-picker-container, .picker-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 16px;
 
 }
