@@ -26,6 +26,8 @@ img{
 }
 p{
     font-size: x-large;
+    color: black;
+    font-family:'Courier New', Courier, monospace
 }
 
 h1{
@@ -103,7 +105,8 @@ transform:rotate(360deg);
     padding: 0 4em;
     padding-bottom: 1rem;
     border-radius: 10px;
-    border: 10px ridge #2F2F2F;
+    border: 15px ridge #2F2F2F;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 .knobs{

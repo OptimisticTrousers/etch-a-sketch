@@ -29,9 +29,9 @@ const lightingButton = document.querySelector('.lighting')
 
 const shadingButton = document.querySelector('.shading');
 
-const screenWidth = 500;
+const screenWidth = 600;
 
-const screenHeight = 500;
+const screenHeight = 600;
 
 //using one's own industry to produce manufactured goods 
 //using one's own industries to produce manufactured goods
@@ -102,7 +102,11 @@ slider.addEventListener('mouseup', () => {
 })
 
 
-eraseButton.onclick = () => previousMode = 'erase'; 
+eraseButton.addEventListener('click' ,() => {
+
+    previousMode = 'erase';
+    eraseButton
+}) 
 
 blackButton.addEventListener('click', () => {
 
