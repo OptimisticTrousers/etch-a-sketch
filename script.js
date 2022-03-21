@@ -1,54 +1,27 @@
-let attempts = 0;
-
-let previousGridSize = 16;
-let previousMode = "black";
 
 const container = document.querySelector('.container');
 
 const clearButton = document.querySelector('.clear');
-
 const eraseButton = document.querySelector('.erase');
-
 const rainbowButton = document.querySelector('.rainbow');
-
 const blackButton = document.querySelector('.black-and-white');
-
-const colorGrabber = document.querySelector('.color-grabber');
+const lightingButton = document.querySelector('.lighting')
+const shadingButton = document.querySelector('.shading');
+const grabberButton = document.querySelector('.color-grabber');
 
 const slider = document.getElementById('slider');
 
-const currentColorDiv = document.querySelector('.current-color');
-
 const userColorPicker = document.getElementById('picker')
-
-const backgroundColorButton = document.querySelector('.background');
-
 const backgroundColorPicker = document.getElementById('background-picker')
 
-const lightingButton = document.querySelector('.lighting')
-
-const shadingButton = document.querySelector('.shading');
-
 const screenWidth = 600;
-
 const screenHeight = 600;
 
-//using one's own industry to produce manufactured goods 
-//using one's own industries to produce manufactured goods
-//instead of relying on the import of manufactured good
+let previousGridSize = 16;
+let previousMode = "black";
 
 let RGBColor = ""
-
 let backgroundColor = ""
-
-let userColor = "";
-
-function getBackgroundColor(event){
-
-    backgroundColor = event.target.value;
-
-    container.style.backgroundColor = `${backgroundColor}`;
-}
 
 backgroundColorPicker.addEventListener('change', (event) => {
 
@@ -74,11 +47,6 @@ userColorPicker.addEventListener('input', (event) => {
 
 }, false);
 
-function getUserColor(event){
-
-    userColor = event.target.value;
-}
-
 lightingButton.addEventListener('click', () => {
 
     previousMode = "lighting";
@@ -93,33 +61,13 @@ shadingButton.addEventListener('click', () => {
     shadingButton.classList.add('is-active');
 })
 
-function clearButtonStyle(){
-
-    const buttonNodeList = document.querySelectorAll('button')
-
-    for(const button of buttonNodeList){
-
-        button.classList.remove('is-active');
-    }
-}
-
-colorGrabber.addEventListener('click', () => {
+grabberButton.addEventListener('click', () => {
 
     previousMode = 'grabber';
     clearButtonStyle();
-    colorGrabber.classList.add('is-active');
+    grabberButton.classList.add('is-active');
 
 })
-
-slider.addEventListener('mouseup', () => {
-
-
-    let sliderOutput = document.querySelector('output').value;
-
-    clearPad();
-    createPad(sliderOutput);
-})
-
 
 eraseButton.addEventListener('click' ,() => {
 
@@ -143,13 +91,43 @@ rainbowButton.addEventListener('click', () => {
     rainbowButton.classList.add('is-active');
 })
 
+clearButton.addEventListener('click', () => {
+
+    clearPad();
+    createPad(previousGridSize);
+});
+
+slider.addEventListener('mouseup', () => {
+
+    let sliderOutput = document.querySelector('output').value;
+
+    clearPad();
+    createPad(sliderOutput);
+})
+
+
+function getBackgroundColor(event){
+
+    backgroundColor = event.target.value;
+
+    container.style.backgroundColor = `${backgroundColor}`;
+}
+
+function clearButtonStyle(){
+
+    const buttonNodeList = document.querySelectorAll('button')
+
+    for(const button of buttonNodeList){
+
+        button.classList.remove('is-active');
+    }
+}
 
 function clearPad(){
 
     while(container.firstChild){
        container.removeChild(container.firstChild);
     }
-
 }
 
 function RGBtoHex(RGBValue){
@@ -173,20 +151,9 @@ function RGBtoHex(RGBValue){
     }
 
     return "#" + r + g + b;
-
 }
 
-
-
-clearButton.addEventListener('click', () => {
-
-    clearPad();
-    createPad(previousGridSize);
-});
-
-
 function changeDivColor(event, div){
-
 
     const randomRed = (Math.random() * 256)
 
@@ -198,12 +165,10 @@ function changeDivColor(event, div){
 
     //got this from stackoverflow to make a hold and click: https://stackoverflow.com/questions/15098584/check-if-mouse-button-is-down-while-hovering
 
-
     if(event.buttons == 1 || event.buttons == 3){
 
         //for shading and lighting https://stackoverflow.com/questions/58511950/javascript-etch-a-sketch-shading-pen-stops-increasing-opacity-after-another-pen
         if(previousMode === 'custom'){
-
 
             event.target.style.backgroundColor = `${userColorPicker.value}`;
         }
@@ -243,7 +208,6 @@ function changeDivColor(event, div){
 
 }
 
-
 function createPad(gridSize){
 
     for(let i = 0; i < gridSize; i++){
@@ -256,35 +220,32 @@ function createPad(gridSize){
             container.appendChild(div);
         }
 
-    for(let j = 0; j < gridSize ; j++){
+        for(let j = 0; j < gridSize ; j++){
 
-        const div = document.createElement('div');
+            const div = document.createElement('div');
 
-        div.style.height =`${screenHeight/gridSize}px`;
+            div.style.height =`${screenHeight/gridSize}px`;
 
-        div.style.width = `${screenWidth/gridSize}px`;
+            div.style.width = `${screenWidth/gridSize}px`;
 
-        div.style.backgroundColor = "rgb(255,255,255)";
+            div.style.backgroundColor = "rgb(255,255,255)";
 
-        div.style.cssFloat = "left"
+            div.style.cssFloat = "left"
 
-        previousGridSize = gridSize;
+            previousGridSize = gridSize;
 
-        div.addEventListener('mouseover', (event) => {
+            div.addEventListener('mouseover', (event) => {
 
-            changeDivColor(event);
-        })
-        div.addEventListener('mousedown', (event) => {
+                changeDivColor(event);
+            })
+            div.addEventListener('mousedown', (event) => {
 
-            changeDivColor(event);
-        })
+                changeDivColor(event);
+            })
 
-        container.appendChild(div);
-
-        }
-
+            container.appendChild(div);
+            }
     }
-
 }
 
 //default mode and size for the function
