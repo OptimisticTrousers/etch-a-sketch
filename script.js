@@ -31,7 +31,7 @@ let currentColor = ""
 
 shadingButton.addEventListener('click', () => {
 
-    previousMode = "shading"
+    previousMode = "shading";
 })
 
 backgroundColorButton.addEventListener('click', () =>{
@@ -107,7 +107,7 @@ function changeDivColor(event){
         }
         else if(previousMode === 'lighting'){
 
-            event.tartget.style.opacity = opacity
+            event.target.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
         }
         else if(previousMode === 'picker'){
 
