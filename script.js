@@ -15,8 +15,6 @@ const blackButton = document.querySelector('.black-and-white');
 
 const colorGrabber = document.querySelector('.color-grabber');
 
-const colorPickerButton = document.querySelector('.color-picker');
-
 const slider = document.getElementById('slider');
 
 const currentColorDiv = document.querySelector('.current-color');
@@ -39,7 +37,7 @@ const screenHeight = 500;
 //using one's own industries to produce manufactured goods
 //instead of relying on the import of manufactured good
 
-let currentColor = ""
+let RGBColor = ""
 
 let backgroundColor = ""
 
@@ -92,12 +90,7 @@ shadingButton.addEventListener('click', () => {
 })
 
 
-
-colorGrabber.addEventListener('click', () => {
-
-    previousMode = 'picker';
-
-})
+colorGrabber.onclick = () => previousMode = 'grabber';
 
 slider.addEventListener('mouseup', () => {
 
@@ -130,6 +123,11 @@ function clearPad(){
 
 }
 
+function RGBtoHex(RGBValue){
+
+
+}
+
 
 
 clearButton.addEventListener('click', () => {
@@ -139,7 +137,7 @@ clearButton.addEventListener('click', () => {
 });
 
 
-function changeDivColor(event){
+function changeDivColor(event, div){
 
 
     const randomRed = (Math.random() * 256)
@@ -167,10 +165,12 @@ function changeDivColor(event){
 
             event.target.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
         }
-        else if(previousMode === 'picker'){
-
-            currentColor = event.target.style.backgroundColor;
-            currentColorDiv.style.backgroundColor = currentColor;
+        else if(previousMode === 'grabber'){
+            
+            RGBColor = window.getComputedStyle(div).color;
+            console.log(RGBColor);
+            HexColor = RGBtoHex(RGBColor);
+            userColorPicker.value = HexColor;
         }
         else if(previousMode === 'erase'){
 
@@ -221,11 +221,11 @@ function createPad(gridSize){
 
         div.addEventListener('mouseover', (event) => {
 
-            changeDivColor(event);
+            changeDivColor(event, div);
         })
         div.addEventListener('mousedown', (event) => {
 
-            changeDivColor(event);
+            changeDivColor(event, div);
         })
 
         container.appendChild(div);
