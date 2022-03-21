@@ -154,6 +154,11 @@ footer{
     background-color: white;
     border-radius: 10px;
 }
+h4, output{
+    font-size: x-large;
+    text-align: center;
+    margin: 1rem 0;
+}
 
 /*used this to disable ghost image: https://www.reddit.com/r/webdev/comments/pesm19/how_do_i_disable_this_ghost_image_when_i_click/*/
 
