@@ -15,6 +15,8 @@ const blackButton = document.querySelector('.black-and-white');
 
 const colorGrabber = document.querySelector('.color-grabber');
 
+const colorPicker = document.querySelector('.color-picker');
+
 const slider = document.getElementById('slider');
 
 const currentColorDiv = document.querySelector('.current-color');
@@ -28,6 +30,11 @@ const shadingButton = document.querySelector('.shading');
 const screenWidth = 500;
 
 const screenHeight = 500;
+
+
+//using one's own industry to produce manufactured goods 
+//using one's own industries to produce manufactured goods
+//instead of relying on the import of manufactured good
 
 let currentColor = ""
 
