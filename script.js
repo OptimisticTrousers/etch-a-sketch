@@ -41,8 +41,19 @@ let currentColor = ""
 
 let userColor = "";
 
-userColorPicker.addEventListener('change', getUserColor, false);
-userColorPicker.addEventListener('input', getUserColor, false);
+userColorPicker.addEventListener('change', (event) => {
+
+    previousMode = 'custom'
+    getUserColor(event)
+
+}, false);
+
+userColorPicker.addEventListener('input', (event) => {
+
+    previousMode = 'custom'
+    getUserColor(event)
+
+}, false);
 
 function getUserColor(event){
 
@@ -136,8 +147,11 @@ function changeDivColor(event){
     if(event.buttons == 1 || event.buttons == 3){
 
         //for shading and lighting https://stackoverflow.com/questions/58511950/javascript-etch-a-sketch-shading-pen-stops-increasing-opacity-after-another-pen
+        if(previousMode === 'custom'){
 
-        if(previousMode === 'lighting'){
+            event.target.style.backgroundColor = `${userColor}`;
+        }
+        else if(previousMode === 'lighting'){
 
             event.target.style.opacity = opacity <= 0 ? "0" : opacity - 0.1 + "";
         }
