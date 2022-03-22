@@ -234,7 +234,10 @@ body{
 
     button{
 
-        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        font-size: large;
+        padding: 3rem 0;
     }
 
     h3{
