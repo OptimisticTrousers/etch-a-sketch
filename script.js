@@ -37,6 +37,18 @@ function handleMediaQuery(event){
         screenHeight = 600;
     }
 
+
+}
+
+function changeDivSize(){
+
+    const divs = document.querySelectorAll('.container');
+
+    divs.forEach(div => {
+
+        div.style.width = `${screenWidth/previousGridSize}px`
+        div.style.height = `${screenHeight/previousGridSize}px`
+    })
 }
 
 mediaQuery.addListener(handleMediaQuery);
@@ -171,7 +183,7 @@ function RGBtoHex(RGBValue){
     return "#" + r + g + b;
 }
 
-function changeDivColor(event, div){
+function changeDivColor(event){
 
     const randomRed = (Math.random() * 256)
 

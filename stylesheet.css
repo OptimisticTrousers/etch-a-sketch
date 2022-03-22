@@ -74,7 +74,7 @@ h2{
     font-family: "Sacramento", cursive;
 }
 
-.clear, .erase, .rainbow, .black-and-white, .color-grabber, .background, .shading, .lighting, .color-picker{
+button{
 
     display: flex;
     margin: 0 auto;
@@ -192,8 +192,12 @@ body{
     gap: 16px;
 
 }
+.slider-container{
+    display: flex;
+    flex-direction: column;
+}
 
-@media(max-width:1080px){
+@media only screen and (max-width:1080px) and (min-width: 890px){
 
     main{
 
@@ -202,11 +206,72 @@ body{
         
     }
     .controls{
-        padding: 0 6rem;
-        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 0 auto;
+        padding: 0 1rem;
+        gap: 2px;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .controls-title{
+        font-size: 24px;
+        text-align: center;
+        color: #f44336;
+        
+
+    }
+    button{
+        padding: 0.5rem;
+    }
+    h3{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    h4{
+        font-size: medium;
+    }
+    input{
+        margin: 0 auto;
+    }
+    .background-picker-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .picker-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 680px){
+
+    .title.text{
+        font-size: 50px;
+    }
+    .controls{
+        display: flex;
+        
+        padding: 0 8px;
+    }
+    button{
+        padding: 0px;
     }
     .container{
         width: 300px;
         height:300px;
     }
+    h3{
+        font-size: medium;
+    }
+    h4{
+        font-size: medium;
+    }
+
 }
