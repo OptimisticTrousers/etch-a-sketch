@@ -250,18 +250,21 @@ body{
     }
 }
 
-@media(max-width: 680px){
+@media(max-width: 890px){
 
+    main{
+        display:flex;
+        flex-direction: column;
+    }
     .title.text{
         font-size: 50px;
     }
     .controls{
         display: flex;
         
-        padding: 0 8px;
     }
     button{
-        padding: 0px;
+        padding: 0.25rem 3rem;
     }
     .container{
         width: 300px;
