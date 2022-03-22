@@ -192,3 +192,21 @@ body{
     gap: 16px;
 
 }
+
+@media(max-width:1080px){
+
+    main{
+
+        display:flex;
+        flex-direction: column;
+        
+    }
+    .controls{
+        padding: 0 6rem;
+        padding-bottom: 2rem;
+    }
+    .container{
+        width: 300px;
+        height:300px;
+    }
+}

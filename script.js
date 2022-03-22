@@ -14,14 +14,32 @@ const slider = document.getElementById('slider');
 const userColorPicker = document.getElementById('picker')
 const backgroundColorPicker = document.getElementById('background-picker')
 
-const screenWidth = 600;
-const screenHeight = 600;
+let screenWidth = 600;
+let screenHeight = 600;
+
+const mediaQuery = window.matchMedia('(max-width: 1080px)');
 
 let previousGridSize = 16;
 let previousMode = "black";
 
 let RGBColor = ""
 let backgroundColor = ""
+
+function handleMediaQuery(event){
+
+    if(event.matches){
+
+        screenWidth = 300;
+        screenHeight = 300;
+    }
+    else{
+        screenHeight = 600;
+        screenHeight = 600;
+    }
+
+}
+
+mediaQuery.addListener(handleMediaQuery);
 
 backgroundColorPicker.addEventListener('change', (event) => {
 
