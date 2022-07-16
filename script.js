@@ -14,8 +14,8 @@ const slider = document.getElementById('slider');
 const userColorPicker = document.getElementById('picker')
 const backgroundColorPicker = document.getElementById('background-picker')
 
-let screenWidth = 449;
-let screenHeight = 449;
+let screenWidth = 400;
+let screenHeight = 400;
 
 const mediaQuery = window.matchMedia('(max-width: 890px)');
 
