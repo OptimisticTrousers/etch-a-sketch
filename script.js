@@ -226,9 +226,9 @@ function createPad(gridSize){
 
             const div = document.createElement('div');
 
-            div.style.height =`2px`;
+            div.style.height =`25px`;
 
-            div.style.width = `2px`;
+            div.style.width = `25px`;
 
             div.style.backgroundColor = "rgb(255,255,255)";
 
