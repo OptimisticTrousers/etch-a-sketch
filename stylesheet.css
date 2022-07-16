@@ -5,7 +5,7 @@ body{
 
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     background-color: lightgray;
     color: white;
     font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -205,9 +205,9 @@ body{
 @media(max-width: 1040px){
 
     main{
-        height: 100%;
         display:flex;
         flex-direction: column;
+        padding-bottom: 2rem;
     }
 
     .title.text{
@@ -228,6 +228,9 @@ body{
     h4{
 
         font-size: medium;
+    }
+    footer {
+        display: none;
     }
 
 }
