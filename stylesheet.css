@@ -234,3 +234,10 @@ body{
     }
 
 }
+@media(max-width: 600px) {
+
+    .container > div{
+        width: 5vw !important;
+        height: 5vw !important;
+    }
+}

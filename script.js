@@ -14,8 +14,8 @@ const slider = document.getElementById('slider');
 const userColorPicker = document.getElementById('picker')
 const backgroundColorPicker = document.getElementById('background-picker')
 
-let screenWidth = 100;
-let screenHeight = 100;
+let screenWidth = 544;
+let screenHeight = 544;
 
 const mediaQuery = window.matchMedia('(max-width: 890px)');
 
@@ -226,9 +226,9 @@ function createPad(gridSize){
 
             const div = document.createElement('div');
 
-            div.style.height =`20px`;
+            div.style.height =`${screenHeight/gridSize}px`;
 
-            div.style.width = `20px`;
+            div.style.width = `${screenWidth/gridSize}px`;
 
             div.style.backgroundColor = "rgb(255,255,255)";
 
