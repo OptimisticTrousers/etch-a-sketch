@@ -9,6 +9,7 @@ body{
     background-color: lightgray;
     color: white;
     font-family: 'arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
 }
 
 main{
@@ -126,7 +127,7 @@ button:hover, button.is-active{
     padding: 0 4em;
     padding-bottom: 1rem;
     border-radius: 10px;
-    border: 15px ridge #2F2F2F;
+    border: 6px ridge #2F2F2F;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
@@ -138,11 +139,22 @@ footer{
     gap: 1rem;
     text-align: center;
     margin-top: auto;
-    background-color: #f44336;
+    background-color: #F5F5F5;
     height: 100px;
-    color: white;
 }
 
+/* Dark Gray: A dark gray can give a modern and sleek appearance while maintaining the neutrality of the design.
+
+Hex Code: #2D2D2D
+Light Gray: If you want a lighter touch that contrasts with the main drawing area but isn't as stark as the current red.
+
+Hex Code: #F5F5F5
+Soft Blue: Introducing a color that's not too bright but can provide a slight contrast to the existing design.
+
+Hex Code: #DCEEFB
+Off-White/Beige: This can give a slightly warm and welcoming tone to the footer.
+
+Hex Code: #FAF3E0 */
 .current-color{
 
     background-color: red;
@@ -202,7 +214,7 @@ body{
 }
 
 
-@media(max-width: 1040px){
+@media(max-width: 1110px){
 
     main{
         display:flex;
@@ -214,10 +226,14 @@ body{
 
         font-size: 50px;
     }
-
+    .controls {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1rem 2rem;
+    }
     button{
 
-        padding: 1.5rem 4rem;
+        /* padding: 1.5rem 4rem; */
     }
 
     h3{
