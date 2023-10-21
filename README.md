@@ -1,4 +1,4 @@
-# TOP-etch-a-sketch
+# etch-a-sketch
 Etch-A-Sketch
 
 A project that allows users to draw on the board, re-size the board, change colors, etc. 
